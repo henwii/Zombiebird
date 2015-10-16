@@ -22,7 +22,9 @@ public class Bird {
         acceleration = new Vector2(0,460);
     }
     public void update(float delta){
+
         velocity.add(acceleration.cpy().scl(delta));
+
         if(velocity.y > 200){
             velocity.y = 200;
         }
@@ -38,7 +40,7 @@ public class Bird {
         }
 
         if(isFalling()){
-            rotation += 480*delta;
+            rotation += 300*delta;
             if(rotation > 90){
                 rotation = 90;
             }
@@ -64,5 +66,8 @@ public class Bird {
     }
     public float getHeight(){
         return height;
+    }
+    public float getRotation(){
+        return rotation;
     }
 }
